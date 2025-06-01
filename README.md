@@ -16,11 +16,21 @@ MW22084|dkon brtsegs, ca|267a1|pa chen po'i mdo  /   sangs rgyas dang byang chub
 
 Each line has 4 fields:
 
-* The "set" identifier (representing a physical collection somewhere, like a library)
-* The volume name within that set
-* The folio page and line identifier for the line of text
-* The actual text of the line
+* The "set" identifier (representing a physical collection somewhere, like a library, e.g. "MW22084" above)
+* The volume name within that set (e.g. "dkon brtsegs, ca" above)
+* The folio page and line identifier for the line of text (e.g. 266b6 above)
+* The actual text of the line (e.g. the data "chen gyi lo ts+tsha....")
 
 Note that sequences of multiple whitespace characters are not important, they are
 an artifact of my cleaning process (i.e. I just didn't clean them into single
 spaces).
+
+## File storage
+
+The file has been tar'd and compressed with `zstd`. My exact command line was:
+
+```sh
+tar -cf - . | zstd -19 --ultra -o ../my_archive.tar.zst
+```
+
+The archive should have a much better name. Not sure what yet.
